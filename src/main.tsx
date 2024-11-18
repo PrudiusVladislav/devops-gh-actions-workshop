@@ -9,6 +9,7 @@ const Global = createGlobalStyle`
   }
 `;
 
+// testing gh workflow
 const container = document.getElementById("root");
 const root = createRoot(container!);
 
