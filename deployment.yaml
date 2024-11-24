@@ -16,4 +16,4 @@ spec:
       - name: rocketdex-container
         image: ghcr.io/prudiusvladislav/devops-gh-actions-workshop:b0da25c
         ports:
-        - containerPort: 5175
+        - containerPort: 8080
