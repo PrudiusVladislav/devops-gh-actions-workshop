@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rocketdex-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rocketdex
+  template:
+    metadata:
+      labels:
+        app: rocketdex
+    spec:
+      containers:
+      - name: rocketdex-container
+        image: ghcr.io/prudiusvladislav/devops-gh-actions-workshop:b0da25c
+        ports:
+        - containerPort: 5175
