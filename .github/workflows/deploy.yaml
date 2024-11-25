@@ -21,4 +21,5 @@ jobs:
         passphrase: ${{ secrets.SSH_PASS }}
         script: |
           cd ~/devops-gh-actions-workshop
+          git pull origin main
           ./deploy.sh
