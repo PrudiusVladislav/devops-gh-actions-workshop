@@ -15,5 +15,6 @@ spec:
       containers:
       - name: rocketdex-container
         image: rocketdex:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
