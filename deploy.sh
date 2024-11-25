@@ -27,5 +27,10 @@ while [[ $(kubectl get pods -l app=rocketdex -o 'jsonpath={..status.phase}') != 
   sleep 5
 done
 
-echo "Port forwarding to service"
-kubectl port-forward service/rocketdex-service 8080:80
+echo "Checking if port 8080 is already in use"
+if lsof -i :8080; then
+  echo "Port 8080 is already in use, skipping port forwarding"
+else
+  echo "Port forwarding to service"
+  kubectl port-forward service/rocketdex-service 8080:80 &
+fi
